@@ -9,7 +9,7 @@
               <Icon name="charm:inbox" />
             </div>
             <div class="Sidebar__button--title" >
-            <button class="sidebar__button" >Close (esc)</button>
+            <button class="sidebar__button" @click="closeSidebar" ref="escapeButton">Close (esc)</button>
           </div>
           </div>
   
@@ -19,7 +19,7 @@
                 <Icon name="charm:inbox" />
               </div>
               <div class="Sidebar__button--title--markAsRead">
-              <button class="sidebar__button" @click="markAsRead">Mark as read (r)</button>
+              <button class="sidebar__button" @click="markAsRead" ref="markAsReadButton">Mark as read (r)</button>
             </div>
             </div>
   
@@ -28,7 +28,7 @@
                 <Icon name="charm:inbox" />
               </div>
               <div class="Sidebar__button--title">
-              <button class="sidebar__button" @click="archive">archive (a)</button>
+              <button class="sidebar__button" @click="archive" ref="archiveButton">archive (a)</button>
             </div>
             </div>
           </div>
@@ -49,6 +49,9 @@
 
 const { emailId, emailTitle,emailContent,emailArchive, checked } = defineProps(['emailId','emailTitle','emailContent','emailArchive', 'checked']);
  const emit = defineEmits(['close-sidebar', 'archive', 'mark-as-read']);
+ const archiveButton = ref(null); // Reference to the archive button element
+ const markAsReadButton = ref(null); // Reference to the mark as read button element
+ const escapeButton = ref(null); // Reference to the mark as read button element
 
  const closeSidebar = () => {
    emit('close-sidebar');
@@ -61,6 +64,35 @@ const { emailId, emailTitle,emailContent,emailArchive, checked } = defineProps([
 const markAsRead = () => {
    emit('mark-as-read');
  };
+
+ onMounted(() => {
+  document.addEventListener('keydown', handleKeyDown);
+});
+
+// Event listener callback
+const handleKeyDown = (event) => {
+  // Check if the pressed key is "a" (case-insensitive)
+  if (event.key.toLowerCase() === 'a') {
+    // Check if the archiveButton ref is available and click it
+    if (archiveButton.value) {
+      archiveButton.value.click();
+    }
+  }
+
+  if (event.key.toLowerCase() === 'r') {
+    // Check if the archiveButton ref is available and click it
+    if (markAsReadButton.value) {
+        markAsReadButton.value.click();
+    }
+  }
+
+  if (event.key.toLowerCase() === 'Escape') {
+    // Check if the archiveButton ref is available and click it
+    if (escapeButton.value) {
+      escapeButton.value.click();
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
