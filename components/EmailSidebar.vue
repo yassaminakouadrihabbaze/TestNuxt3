@@ -6,7 +6,7 @@
     <div class="button-container">
           <div class="left-button"  @click="closeSidebar">
             <div class="icon">
-              <Icon name="charm:inbox" />
+              <Icon name="material-symbols:close" />
             </div>
             <div class="Sidebar__button--title" >
             <button class="sidebar__button" @click="closeSidebar" ref="escapeButton">Close (esc)</button>
@@ -16,7 +16,7 @@
           <div class="right-buttons">
             <div class="right-button">
               <div class="icon">
-                <Icon name="charm:inbox" />
+                <Icon name="ic:baseline-mark-email-read" />
               </div>
               <div class="Sidebar__button--title--markAsRead">
               <button class="sidebar__button" @click="markAsRead" ref="markAsReadButton">Mark as read (r)</button>
@@ -52,6 +52,13 @@ const { emailId, emailTitle,emailContent,emailArchive, checked } = defineProps([
  const archiveButton = ref(null); // Reference to the archive button element
  const markAsReadButton = ref(null); // Reference to the mark as read button element
  const escapeButton = ref(null); // Reference to the mark as read button element
+
+ const route = useRoute();
+
+const activePage = computed(() => {
+  const path = route.path;
+  return path === '/' ? 'inbox' : 'archive';
+});
 
  const closeSidebar = () => {
    emit('close-sidebar');

@@ -1,5 +1,5 @@
 export const useAvailbleEmails = () => useState("availble-Emails",() => [
-  { id: 1, title: 'You have received a message from jhon J', checked: false, read: false, archived: false, marked: true,
+  { id: 1, title: 'You have received a message from jhon Doe', checked: false, read: false, archived: false, marked: true,
 content: 'Dear Team I hope this email finds you well. I wanted to inform you all about our upcoming team meeting scheduled for July 31st, 2023, at 10:00 AM in the conference room.'},
   { id: 2, title: 'Have a look at the latest LinkedIn job offers', checked: false, read: false, archived: false, marked: false,
   content: 'Dear Team I hope this email finds you well. I wanted to inform you all about our upcoming team meeting scheduled for July 31st, 2023, at 10:00 AM in the conference room.'},
