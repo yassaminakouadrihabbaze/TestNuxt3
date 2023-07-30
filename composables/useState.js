@@ -21,8 +21,18 @@ content: 'Dear Team I hope this email finds you well. I wanted to inform you all
 ]) ;
 export const useArchivedEmails = () => useState("archived-Emails",() => []);
 export const useMarkedEmails = () => useState("markedarchived-Emails",() => []);
-export const useNumberOfArchivedEmails = () => useState("number-of-archived-emails",() => 0)
-export const useNumberOfInboxEmails = () => useState("number-of-archived-emails",() => 0)
 
+// export const useNumberOfArchivedEmails = () => useState("number-of-archived-emails",() => 0)
+// export const useNumberOfInboxEmails = () => useState("number-of-archived-emails",() => 0)
+
+export const useNumberOfInboxEmails = () => {
+  const emails = useAvailbleEmails();
+  return computed(() => emails.value.filter((email) => !email.archived).length);
+};
+
+export const useNumberOfArchivedEmails = () => {
+  const archivedEmails = useArchivedEmails();
+  return computed(() => archivedEmails.value.length);
+};
 
 // nzid hna archive emails w inbox emails 

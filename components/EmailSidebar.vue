@@ -46,7 +46,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
 const { emailId, emailTitle,emailContent,emailArchive, checked } = defineProps(['emailId','emailTitle','emailContent','emailArchive', 'checked']);
  const emit = defineEmits(['close-sidebar', 'archive', 'mark-as-read']);
