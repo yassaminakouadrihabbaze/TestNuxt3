@@ -65,8 +65,8 @@
   padding: 20px 0px;
   gap: 173px;
 
-   width: 260px;
-   height: 100vh;
+  width: 260px;
+  height: 100vh;
 
   background: #F8FAFC;
   border: 1px solid #E5E7EB;
@@ -76,7 +76,7 @@
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-  margin: 0px 0px;
+  // margin: 0px 0px;
 }
 
 /* Top */
@@ -363,6 +363,7 @@
   flex: none;
   order: 0;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 /* Logout text */

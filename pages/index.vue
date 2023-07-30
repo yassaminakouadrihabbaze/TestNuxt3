@@ -19,4 +19,8 @@
     background-color: white; /* Set the background to black */
     display: flex;
   }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 </style>
