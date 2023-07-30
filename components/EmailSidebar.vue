@@ -55,13 +55,13 @@ const { emailId, emailTitle,emailContent,emailArchive, checked } = defineProps([
 
  const route = useRoute();
 
-const activePage = computed(() => {
-  const path = route.path;
-  return path === '/' ? 'inbox' : 'archive';
-});
+// const activePage = computed(() => {
+//   const path = route.path;
+//   return path === '/' ? 'inbox' : 'archive';
+// });
 
  const closeSidebar = () => {
-   emit('close-sidebar');
+   emit('close-sidebar',emailId);
 };
 
  const archive = () => {
@@ -87,7 +87,7 @@ const handleKeyDown = (event) => {
   }
 
   if (event.key.toLowerCase() === 'r') {
-    // Check if the archiveButton ref is available and click it
+    // Check if the mark as read  ref is available and click it
     if (markAsReadButton.value) {
         markAsReadButton.value.click();
     }

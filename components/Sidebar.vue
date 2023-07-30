@@ -65,8 +65,8 @@
   padding: 20px 0px;
   gap: 173px;
 
-  width: 260px;
-  height: 100vh;
+   width: 260px;
+   height: 100vh;
 
   background: #F8FAFC;
   border: 1px solid #E5E7EB;
@@ -369,7 +369,6 @@
 .nav-menu__logout {
   width: 55px;
   height: 21px;
-  font-family: 'Preevio';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

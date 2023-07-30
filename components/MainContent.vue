@@ -1,3 +1,4 @@
+<!-- MainContent -->
 <template>
   <div class="main-content">
     <div class="main-content__frame">
@@ -57,8 +58,12 @@ function showSidebar(clickedEmail) {
 
 function hideSidebar(clickedEmail) {
   selectedEmail.value = null;
-  console.log('emails', emails.value);
-  console.log('selected email', emails.value.find((email) => email.id === clickedEmail));
+  const selectedE = emails.value.find((email) => email.id === clickedEmail);
+  selectedE.checked = false;
+  // console.log('emails', emails.value);
+  // console.log('selected email', emails.value.find((email) => email.id === clickedEmail));
+  selectedEmails.value = [];
+  numOfSelectedEmails.value = 0;
 }
 
 const selectAllEmails = (selectAll) => {
@@ -76,16 +81,6 @@ const handleEmailSelected = (emailId) => {
   }
 };
 
-// const markAsRead = () => {
-//   selectedEmails.value.forEach((emailId) => {
-//     const email = emails.value.find((email) => email.id === emailId);
-//     if (email) {
-//       email.read = true;
-//     }
-//   });
-//   // selectedEmails.value = [];
-// };
-
 
 const markAsRead = () => {
   const newlyMarkedEmails = [];
@@ -94,6 +89,7 @@ const markAsRead = () => {
       email.marked = true;
       newlyMarkedEmails.push(email);
     }
+     email.checked = false;
   });
 
   // Add newly archived emails to the archivedEmails array

@@ -1,3 +1,4 @@
+<!-- EmailListItem -->
 <template>
   <div :class="['email-list-item', { 'greyed-out': !emailArchive }]" @click="handleEmailClick">
     <div class="email-list-item__checkbox-container">
