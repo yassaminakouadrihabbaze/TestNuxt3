@@ -4,7 +4,7 @@
       <MainContent />
       <NuxtPage></NuxtPage>
     </div>
-  </template>
+</template>
 
 <script setup>
   
@@ -19,7 +19,7 @@
     background-color: white; /* Set the background to black */
     display: flex;
   }
-  body {
+    body {
     margin: 0;
     padding: 0;
   }
