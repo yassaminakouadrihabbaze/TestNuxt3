@@ -66,7 +66,7 @@
   gap: 173px;
 
   width: 260px;
-  height: 100vh;
+  //  height: 791px;
 
   background: #F8FAFC;
   border: 1px solid #E5E7EB;

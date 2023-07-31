@@ -1,7 +1,7 @@
 <!-- OnTopOfList -->
 <template>
 <div class="top__nav">
-    
+    <div class="frame-422">
         <div class="checkbox">
           <input
             type="checkbox"
@@ -21,7 +21,7 @@
          @click="archive" 
          ref="archiveButton">Archive (a)</div>
         </div>
-    
+      </div>
 </div>
 </template>
 
@@ -77,13 +77,9 @@ const handleKeyDown = (event) => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 900px;
-  width: 260px;
   height: 20px;
   margin-bottom: 24px;
-  width: 1687px;
   padding: 0px;
-
 }
 .frame-422 {
   /* Auto layout */
@@ -91,11 +87,9 @@ const handleKeyDown = (event) => {
   flex-direction: row;
   align-items: center;
   padding: 0px ;
-  gap: 900px;
-  width: 1687px;
-  // width: 973px;
+  gap: auto;
+  width: 1021px;
   height: 20px;
-  /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 1;
@@ -122,13 +116,18 @@ const handleKeyDown = (event) => {
   }
 
 .actions-container{
+  margin: 0 auto;
   margin-right: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction:row;
   gap: 40px;
 }
 
 .TopOfListButtons{
+  width: 125px;
   cursor: pointer;
 }
 

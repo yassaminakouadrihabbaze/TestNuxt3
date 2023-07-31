@@ -135,7 +135,8 @@ const archive = () => {
   flex: 1;
   background-color: #ffffff;
   margin: 0;
-  width: 100vh;
+  width: 1021px;
+  // height: 791px;
   padding-top: 0;
   // padding: 20px;
   // padding-left: 60px;
